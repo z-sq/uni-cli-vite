@@ -44,20 +44,20 @@
     "@dcloudio/uni-mp-toutiao": "^3.0.0-alpha-3040220220310005",
     "@dcloudio/uni-mp-weixin": "^3.0.0-alpha-3040220220310005",
     "@dcloudio/uni-quickapp-webview": "^3.0.0-alpha-3040220220310005",
-    "vue": "^3.2.31",
-    "vue-i18n": "^9.1.9",
+    "vue": "^3.2.37",
+    "vue-i18n": "^9.2.2",
     "vuex": "^4.0.2"
   },
   "devDependencies": {
-    "@dcloudio/types": "^2.5.18",
+    "@dcloudio/types": "^2.6.12",
     "@dcloudio/uni-automator": "^3.0.0-alpha-3040220220310005",
     "@dcloudio/uni-cli-shared": "^3.0.0-alpha-3040220220310005",
     "@dcloudio/vite-plugin-uni": "^3.0.0-alpha-3040220220310005",
     "husky": "^8.0.1",
     "lint-staged": "^13.0.3",
     "prettier": "^2.7.1",
-    "typescript": "^4.6.2",
-    "vite": "^2.8.6"
+    "typescript": "^4.7.4",
+    "vite": "^2.9.14"
   },
   "lint-staged": {
     "*.{js,jsx,vue,ts,tsx,md,json}": [
