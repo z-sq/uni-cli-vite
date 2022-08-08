@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
   <head>
     <meta charset="UTF-8" />
     <script>
       var coverSupport = 'CSS' in window && typeof CSS.supports === 'function' && (CSS.supports('top: env(a)') || CSS.supports('top: constant(a)'));
-      document.write('<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0' + (coverSupport ? ', viewport-fit=cover' : '') + '" />');
+      document.write('<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no' + (coverSupport ? ', viewport-fit=cover' : '') + '" />');
     </script>
     <title>Uni App</title>
     <!--preload-links-->
@@ -13,5 +13,13 @@
   <body>
     <div id="app"><!--app-html--></div>
     <script type="module" src="/src/main.ts"></script>
+    <script>
+      // 通过链接参数或者sessionStorage开启调试
+      (function () {
+        if (!/debug=true/.test(window.location) && sessionStorage.getItem('debug') !== 'true') return;
+        document.write('<script src="https://unpkg.com/vconsole" onload="new window.VConsole()"><\/script>');
+        document.write('<script src="https://unpkg.com/vue-vconsole-devtools" onload="window.vueVconsoleDevtools.initPlugin(VConsole.instance);"><\/script>');
+      })();
+    </script>
   </body>
 </html>
