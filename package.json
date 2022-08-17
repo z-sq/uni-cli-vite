@@ -55,9 +55,11 @@
     "@dcloudio/vite-plugin-uni": "^3.0.0-alpha-3040220220310005",
     "husky": "^8.0.1",
     "lint-staged": "^13.0.3",
+    "mockjs": "^1.1.0",
     "prettier": "^2.7.1",
     "typescript": "^4.7.4",
-    "vite": "^2.9.14"
+    "vite": "^2.9.14",
+    "vite-plugin-mock": "^2.9.6"
   },
   "lint-staged": {
     "*.{js,jsx,vue,ts,tsx,md,json}": [
