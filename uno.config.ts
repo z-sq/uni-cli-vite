@@ -1,34 +1,35 @@
-import type { Preset } from 'unocss';
-import { defineConfig, presetIcons } from 'unocss';
-import transformerCompileClass from '@unocss/transformer-compile-class';
-import transformerDirective from '@unocss/transformer-directives';
-import transformerVariantGroup from '@unocss/transformer-variant-group';
+import {
+  defineConfig,
+  presetAttributify,
+  presetIcons,
+  transformerDirectives,
+  transformerVariantGroup
+} from 'unocss';
+import {
+  presetApplet,
+  presetRemToRpx,
+  transformerApplet,
+  transformerAttributify
+} from 'unocss-applet';
 
-import { presetUni } from 'unocss-preset-uni';
-
-function presetRemToRpx(): Preset<{}> {
-  const remRE = /^-?[\.\d]+rem$/;
-  return {
-    name: 'unocss-preset-rem-to-rpx',
-    postprocess: (util) => {
-      util.entries.forEach((i) => {
-        const value = i[1];
-        if (value && typeof value === 'string' && remRE.test(value))
-          i[1] = `${+value.slice(0, -3) * 32}rpx`;
-      });
-    }
-  };
-}
+const isH5 = process.env.UNI_PLATFORM === 'h5';
 
 export default defineConfig({
   presets: [
-    presetUni() as Preset,
+    /**
+     * you can add `presetAttributify()` here to enable unocss attributify mode prompt
+     * although preset is not working for applet, but will generate useless css
+     */
+    presetApplet({ enable: !isH5 }),
+    presetAttributify(),
     presetIcons({ unit: 'rem' }),
-    presetRemToRpx()
+    presetRemToRpx({ enable: !isH5 })
   ],
   transformers: [
-    transformerCompileClass(),
-    transformerDirective(),
-    transformerVariantGroup()
+    transformerDirectives(),
+    transformerVariantGroup(),
+    // Don't change the following order
+    transformerAttributify(),
+    transformerApplet()
   ]
 });
