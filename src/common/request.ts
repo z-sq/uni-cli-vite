@@ -85,16 +85,17 @@ type ApiResponse<T = any> = {
 };
 
 function request<T = any>(url: string, options?: { [key: string]: any }) {
-  return new Promise<ApiResponse<T>>(async (resolve, reject) => {
-    try {
-      const { data } = await HttpInstance.request({
-        url,
-        ...options
+  return new Promise<ApiResponse<T>>((resolve, reject) => {
+    HttpInstance.request({
+      url,
+      ...options
+    })
+      .then(({ data }) => {
+        resolve(data);
+      })
+      .catch((error) => {
+        reject(error);
       });
-      resolve(data);
-    } catch (error) {
-      reject(error);
-    }
   });
 }
 
