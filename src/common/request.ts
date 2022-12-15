@@ -7,14 +7,14 @@ const HttpInstance = new HttpRequest({
   /* #endif */
   enableHttp2: true, // 开启 http2
   enableQuic: true, // 开启 quic
-  enableCache: true, // 开启 cache
+  enableCache: true // 开启 cache
 } as HttpRequestConfig);
 
 // 请求拦截 https://www.quanzhan.co/luch-request/guide/3.x/#在请求之前拦截
 HttpInstance.interceptors.request.use((config) => {
   config.header = {
     ...config.header,
-    token: uni.getStorageSync('token'),
+    token: uni.getStorageSync('token')
   };
   return config;
 });
@@ -36,7 +36,7 @@ const codeMessage: { [x: number]: string } = {
   500: '服务器发生错误，请检查服务器。',
   502: '网关错误。',
   503: '服务不可用，服务器暂时过载或维护。',
-  504: '网关超时。',
+  504: '网关超时。'
 };
 
 // 响应拦截 https://www.quanzhan.co/luch-request/guide/3.x/#在请求之后拦截
@@ -58,13 +58,13 @@ HttpInstance.interceptors.response.use(
         uni.redirectTo({
           url: `/pages/account/login?redirect=${encodeURIComponent(
             $page.fullPath
-          )}`,
+          )}`
         });
         break;
       default:
         uni.showToast({
           title: codeMessage[response.statusCode || 500] || '未知网络请求错误',
-          icon: 'none',
+          icon: 'none'
         });
         break;
     }
@@ -88,7 +88,7 @@ function request<T = any>(url: string, options?: { [key: string]: any }) {
   return new Promise<ApiResponse<T>>((resolve, reject) => {
     HttpInstance.request({
       url,
-      ...options,
+      ...options
     })
       .then(({ data }) => {
         resolve(data);
