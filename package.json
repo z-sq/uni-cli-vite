@@ -1,6 +1,8 @@
 {
   "name": "uni-app",
-  "version": "0.0.2",
+  "version": "0.0.3",
+  "private": true,
+  "repository": "github:zhang-shaoqiang/uni-app-vite",
   "scripts": {
     "dev:app": "uni -p app",
     "dev:app-android": "uni -p app-android",

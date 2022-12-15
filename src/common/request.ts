@@ -1,4 +1,4 @@
-import HttpRequest, { HttpRequestConfig } from 'luch-request';
+import HttpRequest, { type HttpRequestConfig } from 'luch-request';
 
 // 全局配置修改 https://www.quanzhan.co/luch-request/guide/3.x/#全局配置修改setconfig
 const HttpInstance = new HttpRequest({
@@ -7,14 +7,14 @@ const HttpInstance = new HttpRequest({
   /* #endif */
   enableHttp2: true, // 开启 http2
   enableQuic: true, // 开启 quic
-  enableCache: true // 开启 cache
+  enableCache: true, // 开启 cache
 } as HttpRequestConfig);
 
 // 请求拦截 https://www.quanzhan.co/luch-request/guide/3.x/#在请求之前拦截
 HttpInstance.interceptors.request.use((config) => {
   config.header = {
     ...config.header,
-    token: uni.getStorageSync('token')
+    token: uni.getStorageSync('token'),
   };
   return config;
 });
@@ -25,18 +25,18 @@ const codeMessage: { [x: number]: string } = {
   201: '新建或修改数据成功。',
   202: '一个请求已经进入后台排队（异步任务）。',
   204: '删除数据成功。',
-  400: '发出的请求有错误，服务器没有进行新建或修改数据的操作。',
-  401: '用户没有权限（令牌、用户名、密码错误）。',
-  403: '用户得到授权，但是访问是被禁止的。',
-  404: '发出的请求针对的是不存在的记录，服务器没有进行操作。',
+  400: '发出的请求有错误，服务器未做任何处理。',
+  401: '身份验证凭证未通过。',
+  403: '身份验证凭证已通过，但无访问资源权限。',
+  404: '所请求的资源不存在。',
   405: '请求方法不被允许。',
-  406: '请求的格式不可得。',
-  410: '请求的资源被永久删除，且不会再得到的。',
+  410: '请求的资源被永久删除，不再可用。',
   422: '当创建一个对象时，发生一个验证错误。',
+  429: '客户端的请求次数超过限额。',
   500: '服务器发生错误，请检查服务器。',
   502: '网关错误。',
   503: '服务不可用，服务器暂时过载或维护。',
-  504: '网关超时。'
+  504: '网关超时。',
 };
 
 // 响应拦截 https://www.quanzhan.co/luch-request/guide/3.x/#在请求之后拦截
@@ -58,13 +58,13 @@ HttpInstance.interceptors.response.use(
         uni.redirectTo({
           url: `/pages/account/login?redirect=${encodeURIComponent(
             $page.fullPath
-          )}`
+          )}`,
         });
         break;
       default:
         uni.showToast({
           title: codeMessage[response.statusCode || 500] || '未知网络请求错误',
-          icon: 'none'
+          icon: 'none',
         });
         break;
     }
@@ -88,7 +88,7 @@ function request<T = any>(url: string, options?: { [key: string]: any }) {
   return new Promise<ApiResponse<T>>((resolve, reject) => {
     HttpInstance.request({
       url,
-      ...options
+      ...options,
     })
       .then(({ data }) => {
         resolve(data);

@@ -1,5 +1,11 @@
 # 更新历史
 
+### [0.0.3](https://github.com/zhang-shaoqiang/uni-app-vite/compare/v0.0.2...v0.0.3) (2022-12-15)
+
+### 🐛 Bug Fixes | Bug 修复
+
+- 修改依赖提升设置 ([1c44574](https://github.com/zhang-shaoqiang/uni-app-vite/commit/1c4457401c09c6841aa561190d05ae3dbfbd8a0a))
+
 ### 0.0.2 (2022-11-26)
 
 ### ♻ Code Refactoring | 代码重构
