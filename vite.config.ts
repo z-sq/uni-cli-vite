@@ -16,11 +16,11 @@ export default defineConfig(({ command, mode }) => {
       viteMockServe({
         ignore: /^\_/,
         mockPath: 'mock',
-        localEnabled: command === 'serve',
+        localEnabled: command === 'serve'
       }),
       ...(NODE_ENV == 'production'
         ? [visualizer({ emitFile: true }) as PluginOption]
-        : []),
-    ],
+        : [])
+    ]
   };
 });
