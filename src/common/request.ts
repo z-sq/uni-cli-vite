@@ -13,8 +13,8 @@ const HttpInstance = new HttpRequest({
 // 请求拦截 https://www.quanzhan.co/luch-request/guide/3.x/#在请求之前拦截
 HttpInstance.interceptors.request.use((config) => {
   config.header = {
-    ...config.header,
-    token: uni.getStorageSync('token')
+    token: uni.getStorageSync('token'),
+    ...config.header
   };
   return config;
 });
@@ -56,9 +56,7 @@ HttpInstance.interceptors.response.use(
         const { $page } = pages[pages.length - 1];
         // 跳转登陆页，记录来源页面全路径
         uni.redirectTo({
-          url: `/pages/account/login?redirect=${encodeURIComponent(
-            $page.fullPath
-          )}`
+          url: `/pages/account/login?redirect=${encodeURIComponent($page.fullPath)}`
         });
         break;
       default:
