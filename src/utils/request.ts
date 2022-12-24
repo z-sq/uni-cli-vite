@@ -56,7 +56,9 @@ HttpInstance.interceptors.response.use(
         const { $page } = pages[pages.length - 1];
         // 跳转登陆页，记录来源页面全路径
         uni.redirectTo({
-          url: `/pages/account/login?redirect=${encodeURIComponent($page.fullPath)}`
+          url: `/pages/account/login?redirect=${encodeURIComponent(
+            $page.fullPath
+          )}`
         });
         break;
       default:
