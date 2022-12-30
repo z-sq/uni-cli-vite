@@ -1,5 +1,11 @@
 # 更新历史
 
+### [0.0.4](https://github.com/zhang-shaoqiang/uni-app-vite/compare/v0.0.3...v0.0.4) (2022-12-30)
+
+### 🐛 Bug Fixes | Bug 修复
+
+- 调整 token 获取时序，提升 header 高度定制化 ([88f1fa7](https://github.com/zhang-shaoqiang/uni-app-vite/commit/88f1fa71e663d8960b6588c78f7540d6d29c03d8))
+
 ### [0.0.3](https://github.com/zhang-shaoqiang/uni-app-vite/compare/v0.0.2...v0.0.3) (2022-12-15)
 
 ### 🐛 Bug Fixes | Bug 修复
