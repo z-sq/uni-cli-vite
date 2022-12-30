@@ -1,4 +1,4 @@
-import request from '@/common/request';
+import request from '@/utils/request';
 
 /** 接口示例 GET /api/rule */
 export async function getRule(
