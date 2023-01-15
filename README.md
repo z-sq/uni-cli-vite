@@ -41,19 +41,20 @@ npm run build:%PLATFORM%
 uni-app-vite
 ┣ uniCloud                  # 云空间目录，阿里云为uniCloud-aliyun,腾讯云为uniCloud-tcb
 ┣ dist                      # 非工程代码，存放运行或发行的编译结果
-┣ mock                      # 项目mock 模拟数据
+┣ mock                      # 本地模拟数据
 ┣ src                       # 源代码
-┃ ┣ api                     # 应用程序接口服务
 ┃ ┣ common                  # 存放一些公共资源（如：公共图片、公共音视频、公用工具库）
 ┃ ┣ components              # uni-app组件目录,easycom技术,免引用、注册，直接使用各种符合规范vue组件
 ┃ ┣ hybrid                  # App端存放本地html文件的目录
+┃ ┣ locale                  # 国际化资源
 ┃ ┣ nativeplugins           # App原生插件
 ┃ ┣ pages                   # 主包根目录
 ┃ ┣ platforms               # 存放各平台专用页面的目录
+┃ ┣ services                # 后台接口服务
 ┃ ┣ static                  # 存放应用引用静态资源（如图片、视频等）的目录，注意：静态资源只能存放于此
 ┃ ┣ stores                  # store管理
 ┃ ┣ uni_modules             # 存放uni_module规范的插件
-┃ ┣ utils                   # 自定义的工具方法代码
+┃ ┣ utils                   # 工具库
 ┃ ┣ App.vue                 # 应用配置，用来配置App全局样式以及监听
 ┃ ┣ env.d.ts                # TS声明文件
 ┃ ┣ main.ts                 # 入口文件 加载组件 初始化等

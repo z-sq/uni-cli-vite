@@ -1,7 +1,9 @@
 declare namespace API {
   /** 请求参数 */
   type PageParams = {
+    /** 当前的页码 */
     current?: number;
+    /** 页面的容量 */
     pageSize?: number;
   };
 
