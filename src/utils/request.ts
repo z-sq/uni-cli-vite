@@ -84,19 +84,12 @@ type ApiResponse<T = any> = {
   data: T;
 };
 
-function request<T = any>(url: string, options?: { [key: string]: any }) {
-  return new Promise<ApiResponse<T>>((resolve, reject) => {
-    HttpInstance.request({
-      url,
-      ...options
-    })
-      .then(({ data }) => {
-        resolve(data);
-      })
-      .catch((error) => {
-        reject(error);
-      });
+async function request<T = any>(url: string, options?: { [key: string]: any }) {
+  const { data } = await HttpInstance.middleware<ApiResponse<T>>({
+    url,
+    ...options
   });
+  return data;
 }
 
 export default request;

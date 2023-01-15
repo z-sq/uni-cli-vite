@@ -8,6 +8,16 @@
       }
     }
   ],
+  "subPackages": [
+    {
+      "root": "pages/common",
+      "pages": [
+        {
+          "path": "webview"
+        }
+      ]
+    }
+  ],
   "globalStyle": {
     "navigationBarTextStyle": "black",
     "navigationBarTitleText": "uni-app",

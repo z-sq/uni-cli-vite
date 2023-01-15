@@ -1,6 +1,9 @@
 <template>
   <view class="flex flex-col items-center justify-center">
-    <image class="w-25 h-25 mt-25 mx-auto mb-12.5" src="/static/logo.png" />
+    <image
+      class="w-25 h-25 mt-25 mx-auto mb-12.5 animate-bounce"
+      src="/static/logo.png"
+    />
     <view class="flex justify-center">
       <text class="text-lg text-gray-500">{{ title }}</text>
     </view>
