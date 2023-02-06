@@ -1,4 +1,16 @@
 declare namespace API {
+  /** 与后端约定的响应数据格式 */
+  type Response<T = any> = {
+    /** 业务上的请求是否成功 */
+    success?: boolean;
+    /** 业务约定的错误码 */
+    errCode?: string | number;
+    /** 业务上的错误信息 */
+    errMsg?: string;
+    /** 业务数据 */
+    data: T;
+  };
+
   /** 请求参数 */
   type PageParams = {
     /** 当前的页码 */
@@ -7,27 +19,10 @@ declare namespace API {
     pageSize?: number;
   };
 
-  /** MOCK数据 */
-  type RuleListItem = {
-    id?: number;
-    image?: string;
-    name?: string;
-    cname?: string;
-    mobile?: string;
-    email?: string;
-    date?: string;
-    datetime?: string;
-    id_card?: string;
-    ip?: string;
-    url?: string;
-    county?: string;
-    csentence?: string;
-    boolean?: boolean;
-  };
-
-  /** MOCK列表数据 */
-  type RuleList = {
-    list?: RuleListItem[];
+  /** 列表数据 */
+  type PageList<T = any> = {
+    list?: T[];
+    /** 列表的内容总数 */
     total?: number;
   };
 }
