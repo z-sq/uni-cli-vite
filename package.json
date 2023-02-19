@@ -64,8 +64,6 @@
     "@dcloudio/uni-cli-shared": "^3.0.0-3061720230112002",
     "@dcloudio/uni-stacktracey": "^3.0.0-3061720230112002",
     "@dcloudio/vite-plugin-uni": "^3.0.0-3061720230112002",
-    "@iconify/json": "^2.2.6",
-    "@types/node": "^18.11.18",
     "husky": "^8.0.3",
     "lint-staged": "^13.1.0",
     "mockjs": "^1.1.0",
