@@ -43,7 +43,7 @@ uni-app-vite
 ┣ dist                      # 非工程代码，存放运行或发行的编译结果
 ┣ mock                      # 本地模拟数据
 ┣ src                       # 源代码
-┃ ┣ common                  # 存放一些公共资源（如：公共图片、公共音视频、公用工具库）
+┃ ┣ assets                  # 存放一些公共资源（如：公共图片、公共音视频、公用工具库）
 ┃ ┣ components              # uni-app组件目录,easycom技术,免引用、注册，直接使用各种符合规范vue组件
 ┃ ┣ hybrid                  # App端存放本地html文件的目录
 ┃ ┣ locale                  # 国际化资源
