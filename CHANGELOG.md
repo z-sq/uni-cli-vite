@@ -1,5 +1,15 @@
 # 更新历史
 
+## [0.1.1](https://github.com/zhang-shaoqiang/uni-app-vite/compare/v0.1.0...v0.1.1) (2023-02-27)
+
+### ⏪ Reverts | 回退
+
+- Revert "refactor: 调整工程目录结构" ([5218ada](https://github.com/zhang-shaoqiang/uni-app-vite/commit/5218adaeeda8129efb7a205d6619940d0dff4d33))
+
+### ⚡ Performance Improvements | 性能优化
+
+- 增加条件编译 ([57fac7f](https://github.com/zhang-shaoqiang/uni-app-vite/commit/57fac7f115dbb88951613eac33e44a5ec49dd90d))
+
 ## 0.1.0 (2023-01-15)
 
 ### 📝 Documentation | 文档
