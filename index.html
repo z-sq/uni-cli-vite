@@ -14,11 +14,10 @@
     <div id="app"><!--app-html--></div>
     <script type="module" src="/src/main.ts"></script>
     <script>
-      // 通过链接参数或者sessionStorage开启调试
-      (function () {
-        if (!/debug=true/.test(window.location) && sessionStorage.getItem('debug') !== 'true') return;
+      // 通过url参数或者localStorage加载调试器
+      ;(function () {
+        if (!/debug=true/.test(window.location) && localStorage.getItem('debug') !== 'true') return;
         document.write('<script src="https://unpkg.com/vconsole" onload="new window.VConsole()"><\/script>');
-        document.write('<script src="https://unpkg.com/vue-vconsole-devtools" onload="window.vueVconsoleDevtools.initPlugin(VConsole.instance);"><\/script>');
       })();
     </script>
   </body>

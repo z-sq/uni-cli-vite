@@ -16,12 +16,14 @@ onLoad((options) => {
   if (options?.url) link.value = decodeURIComponent(options.url);
 });
 
+// #ifdef MP
 onShareAppMessage(({ webViewUrl }) => {
   return {
     title: webViewUrl,
     path: `/pages/webview/index?url=${encodeURIComponent(webViewUrl as string)}`
   };
 });
+// #endif
 
 function getMessage(e: { detail: any }) {
   uni.showModal({

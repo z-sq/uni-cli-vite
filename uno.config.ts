@@ -23,14 +23,14 @@ export default defineConfig({
      */
     presetApplet({ enable: isApplet }),
     presetAttributify(),
-    presetIcons({ unit: 'rem' }),
+    presetIcons({ cdn: 'https://esm.sh/', unit: 'rem' }),
     presetRemToRpx({ enable: isApplet })
   ],
   transformers: [
     transformerDirectives(),
     transformerVariantGroup(),
     // Don't change the following order
-    transformerAttributify({ enable: isApplet }),
-    transformerApplet({ enable: isApplet })
+    transformerApplet({ enable: isApplet }),
+    transformerAttributify({ enable: isApplet })
   ]
 });

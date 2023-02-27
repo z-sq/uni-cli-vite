@@ -1,7 +1,5 @@
-import { Recordable } from 'vite-plugin-mock';
-
 /** 业务处理成功响应体规范 */
-export function resultSuccess<T = Recordable>(data: T, { errMsg = 'ok' } = {}) {
+export function resultSuccess(data?: any, { errMsg = 'ok' } = {}) {
   return {
     success: true,
     data,
