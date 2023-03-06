@@ -1,11 +1,12 @@
 <template>
-  <view class="flex flex-col items-center justify-center">
+  <view class="items-center justify-center" un-flex="~ col">
     <image
-      class="w-25 h-25 mt-25 mx-auto mb-12.5 animate-bounce"
+      class="w-25 h-25 animate-bounce"
+      un-m="x-auto t-25 b-12.5"
       src="/static/logo.png"
     />
     <view class="flex justify-center">
-      <text class="text-lg text-gray-500">{{ title }}</text>
+      <text un-text="lg gray-500">{{ title }}</text>
     </view>
   </view>
 </template>
