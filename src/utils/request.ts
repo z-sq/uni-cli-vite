@@ -3,7 +3,7 @@ import HttpRequest, { type HttpRequestConfig } from 'luch-request';
 // 全局配置修改 https://www.quanzhan.co/luch-request/guide/3.x/#全局配置修改setconfig
 const HttpInstance = new HttpRequest({
   /* #ifndef H5 */
-  baseURL: import.meta.env.VITE_APP_BASE_API, // 请求的根域名
+  baseURL: import.meta.env.VITE_APP_API_URL, // 请求的根域名
   /* #endif */
   enableHttp2: true, // 开启 http2
   enableQuic: true, // 开启 quic
