@@ -79,9 +79,5 @@
     "*.{js,jsx,vue,ts,tsx,md,json}": [
       "prettier --write"
     ]
-  },
-  "prettier": {
-    "singleQuote": true,
-    "trailingComma": "none"
   }
 }

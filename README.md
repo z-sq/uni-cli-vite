@@ -1,4 +1,4 @@
-# UniApp + Typescript + Vite
+# UniApp + TS + Vite
 
 ## 项目安装依赖
 
@@ -22,20 +22,23 @@ npm run build:%PLATFORM%
 
 | 值                      | 平台              |
 | ----------------------- | ----------------- |
-| app                     | 生成 app 打包资源 |
-| h5                      | h5                |
+| app-plus                | 生成 APP 打包资源 |
+| h5                      | H5                |
 | mp-alipay               | 支付宝小程序      |
 | mp-baidu                | 百度小程序        |
+| mp-weixin               | 微信小程序        |
+| mp-toutiao              | 字节跳动小程序    |
 | mp-kuaishou             | 快手小程序        |
 | mp-lark                 | 飞书小程序        |
 | mp-qq                   | qq 小程序         |
-| mp-toutiao              | 头条小程序        |
-| mp-weixin               | 微信小程序        |
+| mp-360                  | 360 小程序        |
+| mp-jd                   | 京东小程序        |
+| mp-xhs                  | 小红书小程序      |
 | quickapp-webview        | 快应用(webview)   |
 | quickapp-webview-huawei | 快应用华为        |
 | quickapp-webview-union  | 快应用联盟        |
 
-## 工程目录结构
+## 目录结构
 
 ```bash
 uni-app-vite
