@@ -1,5 +1,19 @@
 # 更新历史
 
+### [0.1.3](https://github.com/z-sq/uni-app-vite/compare/v0.1.2...v0.1.3) (2023-06-28)
+
+### ⚡ Performance Improvements | 性能优化
+
+- 增加 TS 类型声明 ([c46c6af](https://github.com/z-sq/uni-app-vite/commit/c46c6af98fafc27ee4fe00d0329365c14c0b7c7d))
+
+### 🐛 Bug Fixes | Bug 修复
+
+- 小程序分享路径地址更改 ([ea578de](https://github.com/z-sq/uni-app-vite/commit/ea578de9b53b1e35e10c43dec701e033cbc9e28b))
+
+### ✨ Features | 新功能
+
+- 安装 vue 调试工具 ([a82e792](https://github.com/z-sq/uni-app-vite/commit/a82e792f28838a15e7872661e21fa5df39ecc513))
+
 ### [0.1.2](https://github.com/zhang-shaoqiang/uni-app-vite/compare/v0.1.0...v0.1.2) (2023-03-10)
 
 ### ⏪ Reverts | 回退
