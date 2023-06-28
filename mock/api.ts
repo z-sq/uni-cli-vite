@@ -1,12 +1,12 @@
-import { mock, Random } from "mockjs";
+import Mockjs from "mockjs";
 import type { MockMethod } from "vite-plugin-mock";
 import { resultSuccess, resultPageSuccess, resultError } from "./_util";
 
 // 拓展mockjs
-Random.extend({
+Mockjs.Random.extend({
   phone: function (): string {
     var phonePrefixs = ["132", "135", "189"]; // 自己写前缀哈
-    return this.pick(phonePrefixs) + mock(/\d{8}/); // Number()
+    return this.pick(phonePrefixs) + Mockjs.mock(/\d{8}/); // Number()
   },
 });
 
@@ -17,7 +17,7 @@ export default [
     method: "get",
     response: (req: { query: { current: number; pageSize: number } }) => {
       const { current: page, pageSize } = req.query;
-      const { list } = mock({
+      const { list } = Mockjs.mock({
         "list|100": [
           {
             id: "@increment()",
@@ -45,7 +45,7 @@ export default [
     timeout: 1000,
     method: "get",
     response: () => {
-      const dataSource = mock({
+      const dataSource = Mockjs.mock({
         id: "@increment()",
         image: "@image()",
         name: "@name()",
