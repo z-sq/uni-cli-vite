@@ -22,7 +22,7 @@ npm run build:%PLATFORM%
 
 | 值                      | 平台              |
 | ----------------------- | ----------------- |
-| app-plus                | 生成 APP 打包资源 |
+| app                     | 生成 APP 打包资源 |
 | h5                      | H5                |
 | mp-alipay               | 支付宝小程序      |
 | mp-baidu                | 百度小程序        |
