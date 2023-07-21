@@ -38,12 +38,5 @@
       </main>
     </div>
     <script type="module" src="/src/main.ts"></script>
-    <script>
-      // 通过url参数或者localStorage加载调试器
-      ;(function () {
-        if (!/debug=true/.test(window.location) && localStorage.getItem('debug') !== 'true') return;
-        document.write('<script src="https://unpkg.com/vconsole" onload="new window.VConsole()"><\/script>');
-      })();
-    </script>
   </body>
 </html>
