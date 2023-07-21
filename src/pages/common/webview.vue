@@ -19,7 +19,6 @@ onLoad((options) => {
 // #ifdef MP
 onShareAppMessage(({ webViewUrl }) => {
   return {
-    title: webViewUrl,
     path: `/pages/common/webview?url=${encodeURIComponent(webViewUrl as string)}`,
   };
 });
