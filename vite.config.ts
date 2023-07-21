@@ -14,8 +14,7 @@ export default defineConfig(({ command }) => {
       checker({ vueTsc: true }),
       viteMockServe({
         ignore: /^\_/,
-        mockPath: "mock",
-        localEnabled: command === "serve",
+        enable: command === "serve",
       }),
     ],
   };
