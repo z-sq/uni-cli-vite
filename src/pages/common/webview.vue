@@ -1,5 +1,5 @@
 <template>
-  <web-view :src="link" @message="getMessage"></web-view>
+  <web-view :src="link" @message="handleMessage($event.detail.data)"></web-view>
 </template>
 
 <script setup lang="ts">
@@ -8,10 +8,6 @@ import { onLoad, onShareAppMessage } from "@dcloudio/uni-app";
 
 const link = ref("https://uniapp.dcloud.io/static/web-view.html");
 
-// #ifdef APP-PLUS
-link.value = "/hybrid/html/local.html";
-// #endif
-
 onLoad((options) => {
   if (options?.url) link.value = decodeURIComponent(options.url);
 });
@@ -19,15 +15,18 @@ onLoad((options) => {
 // #ifdef MP
 onShareAppMessage(({ webViewUrl }) => {
   return {
-    title: webViewUrl,
     path: `/pages/common/webview?url=${encodeURIComponent(webViewUrl as string)}`,
   };
 });
 // #endif
 
-function getMessage(e: { detail: any }) {
+/**
+ * 处理网页发送的消息
+ * @param {any[]} data - 多次 postMessage 的参数组成的数组
+ */
+function handleMessage(data: any[]) {
   uni.showModal({
-    content: JSON.stringify(e.detail),
+    content: JSON.stringify(data),
     showCancel: false,
   });
 }

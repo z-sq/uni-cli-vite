@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <script>
       var coverSupport = 'CSS' in window && typeof CSS.supports === 'function' && (CSS.supports('top: env(a)') || CSS.supports('top: constant(a)'));
-      document.write('<meta name="viewport" content="width=device-width, initial-scale=1' + (coverSupport ? ', viewport-fit=cover' : '') + '" />');
+      document.write('<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, minimum-scale=1.0' + (coverSupport ? ', viewport-fit=cover' : '') + '" />');
     </script>
     <title>Uni App</title>
     <!--preload-links-->
@@ -14,36 +14,18 @@
     <div id="app">
       <!--app-html-->
       <style>
-        * {
-          margin: 0;
-        }
-        main {
+        #app {
           display: flex;
-          flex-direction: column;
           align-items: center;
           justify-content: center;
-          height: 100vh;
-        }
-        small {
-          color: gray;
+          height: calc(100vh - 48px);
         }
       </style>
-      <main>
-        <img
-          src="data:image/svg+xml;utf8,<svg width='48' height='48' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'><path d='M2,12A10.94,10.94,0,0,1,5,4.65c-.21-.19-.42-.36-.62-.55h0A11,11,0,0,0,12,23c.34,0,.67,0,1-.05C6,23,2,17.74,2,12Z'><animateTransform attributeName='transform' dur='0.6s' repeatCount='indefinite' type='rotate' values='0 12 12;360 12 12'/></path></svg>"
-          alt="loading"
-        />
-        <p>正在加载资源</p>
-        <small>初次加载资源可能需要较多时间 请耐心等待</small>
-      </main>
+      <img
+        src="data:image/svg+xml;utf8,<svg width='48' height='48' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'><path d='M2,12A10.94,10.94,0,0,1,5,4.65c-.21-.19-.42-.36-.62-.55h0A11,11,0,0,0,12,23c.34,0,.67,0,1-.05C6,23,2,17.74,2,12Z'><animateTransform attributeName='transform' dur='0.6s' repeatCount='indefinite' type='rotate' values='0 12 12;360 12 12'/></path></svg>"
+        alt="loading"
+      />
     </div>
     <script type="module" src="/src/main.ts"></script>
-    <script>
-      // 通过url参数或者localStorage加载调试器
-      ;(function () {
-        if (!/debug=true/.test(window.location) && localStorage.getItem('debug') !== 'true') return;
-        document.write('<script src="https://unpkg.com/vconsole" onload="new window.VConsole()"><\/script>');
-      })();
-    </script>
   </body>
 </html>
