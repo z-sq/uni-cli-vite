@@ -10,6 +10,8 @@ declare module "*.vue" {
 interface ImportMetaEnv {
   readonly VITE_APP_NAME: string;
   readonly VITE_APP_API_URL: string;
+  readonly VITE_TIM_SDKAPPID: string;
+  readonly VITE_TIM_SECRETKEY: string;
   // 更多环境变量...
 }
 

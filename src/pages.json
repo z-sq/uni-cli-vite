@@ -4,12 +4,26 @@
     { "path": "pages/index/index" }
   ],
   "subPackages": [
+    // #ifdef H5
+    {
+      "root": "im",
+      "pages": [
+        { "path": "login", "style": { "navigationBarTitleText": "登录" } },
+        { "path": "mine", "style": { "navigationBarTitleText": "个人中心" } },
+        { "path": "conversation", "style": { "navigationBarTitleText": "消息" } },
+        { "path": "chat", "style": { "navigationBarTitleText": "聊天", "disableScroll": true } }
+      ]
+    },
+    // #endif
     {
       "root": "pages/common",
       "pages": [{ "path": "webview" }]
     }
   ],
   "globalStyle": {
+    "h5": {
+      "navigationStyle": "custom"
+    },
     "navigationBarTextStyle": "black",
     "navigationBarTitleText": "uni-app",
     "navigationBarBackgroundColor": "#F8F8F8",
