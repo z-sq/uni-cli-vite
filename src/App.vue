@@ -14,7 +14,7 @@ onHide(() => {
 /* 每个页面公共css */
 /* #ifndef APP-NVUE */
 page {
-  --uno: "min-h-full bg-light-100 dark:bg-dark-800 font-sans";
+  @apply min-h-full bg-light-100 dark:bg-dark-800 font-sans;
 }
 /* #endif */
 </style>
