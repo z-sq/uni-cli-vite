@@ -1,0 +1,27 @@
+{
+  "files.associations": {
+    "*.json": "jsonc"
+  },
+  "cSpell.words": [
+    "aliyun",
+    "astro",
+    "automator",
+    "autoscan",
+    "composables",
+    "dcloudio",
+    "easycom",
+    "kuaishou",
+    "luch",
+    "mockjs",
+    "nativeplugins",
+    "nvue",
+    "pinia",
+    "quickapp",
+    "stacktracey",
+    "tabbar",
+    "toutiao",
+    "Unocss",
+    "unplugin",
+    "WEIXIN"
+  ]
+}
