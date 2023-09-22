@@ -1,4 +1,6 @@
 import HttpRequest, { type HttpRequestConfig } from "luch-request";
+import { useAccountStore } from "@/stores/account";
+import { toLoginPage } from "@/utils";
 
 // 全局配置修改 https://www.quanzhan.co/luch-request/guide/3.x/#全局配置修改setconfig
 const HttpInstance = new HttpRequest({
@@ -12,6 +14,8 @@ const HttpInstance = new HttpRequest({
 
 // 请求拦截 https://www.quanzhan.co/luch-request/guide/3.x/#在请求之前拦截
 HttpInstance.interceptors.request.use((config) => {
+  const { token } = useAccountStore();
+  config.header = Object.assign({ token }, config.header);
   return config;
 });
 
@@ -32,16 +36,11 @@ HttpInstance.interceptors.response.use(
           };
         }>();
         const { $page } = pages[pages.length - 1];
-        // 跳转登陆页，记录来源页面全路径
-        uni.redirectTo({
-          url: `/pages/account/login?redirect=${encodeURIComponent($page.fullPath)}`,
-        });
+        // 跳转登陆页
+        toLoginPage($page.fullPath);
         break;
       default:
-        uni.showToast({
-          title: `${statusCode || "error"}：请求错误`,
-          icon: "none",
-        });
+        statusCode && uni.showToast({ title: `${statusCode}：请求错误`, icon: "none" });
         break;
     }
     return Promise.reject(response);

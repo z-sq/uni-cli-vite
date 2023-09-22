@@ -70,6 +70,8 @@
     "@dcloudio/uni-cli-shared": "3.0.0-3081220230817001",
     "@dcloudio/uni-stacktracey": "3.0.0-3081220230817001",
     "@dcloudio/vite-plugin-uni": "3.0.0-3081220230817001",
+    "@uni-helper/uni-app-types": "^0.5.10",
+    "@uni-helper/uni-ui-types": "^0.5.11",
     "@vue/tsconfig": "^0.4.0",
     "lint-staged": "^14.0.1",
     "mockjs": "^1.1.0",
