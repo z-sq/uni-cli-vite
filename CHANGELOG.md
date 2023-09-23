@@ -1,5 +1,28 @@
 # 更新历史
 
+## [0.2.0](https://github.com/z-sq/uni-app-vite/compare/v0.1.3...v0.2.0) (2023-09-23)
+
+### 🐛 Bug Fixes | Bug 修复
+
+- 修改图片路径引入方式 ([213a1cd](https://github.com/z-sq/uni-app-vite/commit/213a1cd486fa22c99ce9eac0a99a14f181b2582b))
+
+### ⏪ Reverts | 回退
+
+- Revert "pref: @apply兼容css" ([68a824a](https://github.com/z-sq/uni-app-vite/commit/68a824ae7252a3f9c0fdf8f2f27b0628c7745c13))
+
+### ⚡ Performance Improvements | 性能优化
+
+- 删除调试脚本 ([e79674f](https://github.com/z-sq/uni-app-vite/commit/e79674f445602643ee4ad71f5615e820595ed947))
+- 优化网络请求错误提示语 ([a2c33f4](https://github.com/z-sq/uni-app-vite/commit/a2c33f4f9680b2e70a192902d56463143319a8f8))
+
+### ✨ Features | 新功能
+
+- 调整web-view分享标题 ([366b2dc](https://github.com/z-sq/uni-app-vite/commit/366b2dc5a93205456869646bdbf553519b1b774d))
+- 精简loading占位代码 ([fe1d417](https://github.com/z-sq/uni-app-vite/commit/fe1d417da8ce88779c6ef85f840406078584ac59))
+- 精简loading占位代码 ([67ebdef](https://github.com/z-sq/uni-app-vite/commit/67ebdef74e2c2c112b67e1082adef8664abc2b6e))
+- 删除hybrid示例 ([d11ec9d](https://github.com/z-sq/uni-app-vite/commit/d11ec9dd0bc3f94b72d1a61328028edf72eaa6c8))
+- 账户模块 ([8915cd6](https://github.com/z-sq/uni-app-vite/commit/8915cd69f16fd5b592708a3eefdec73523d47cac))
+
 ### [0.1.3](https://github.com/z-sq/uni-app-vite/compare/v0.1.2...v0.1.3) (2023-06-28)
 
 ### ⚡ Performance Improvements | 性能优化

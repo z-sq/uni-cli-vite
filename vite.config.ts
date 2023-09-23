@@ -11,7 +11,7 @@ export default defineConfig(({ command }) => {
       VueDevTools(),
       uni(),
       Unocss(),
-      checker({ vueTsc: true }),
+      checker({ overlay: false, vueTsc: true }),
       viteMockServe({
         ignore: /^\_/,
         enable: command === "serve",

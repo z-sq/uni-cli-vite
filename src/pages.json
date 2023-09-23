@@ -7,8 +7,41 @@
     {
       "root": "pages/common",
       "pages": [{ "path": "webview" }]
+    },
+    {
+      "root": "pages/account",
+      "pages": [
+        {
+          "path": "login",
+          "style": {
+            "navigationBarTitleText": "登陆"
+          }
+        }
+      ]
+    },
+    {
+      "root": "pages/user",
+      "pages": [
+        {
+          "path": "index",
+          "style": {
+            "navigationBarTitleText": "个人中心"
+          }
+        },
+        {
+          "path": "profile",
+          "style": {
+            "navigationBarTitleText": "个人信息"
+          }
+        }
+      ]
     }
   ],
+  "preloadRule": {
+    "pages/index/index": {
+      "packages": ["pages/account"]
+    }
+  },
   "globalStyle": {
     "navigationBarTextStyle": "black",
     "navigationBarTitleText": "uni-app",
