@@ -29,6 +29,13 @@
           }
         },
         {
+          "path": "list",
+          "style": {
+            "navigationBarTitleText": "用户列表",
+            "enablePullDownRefresh": true
+          }
+        },
+        {
           "path": "profile",
           "style": {
             "navigationBarTitleText": "个人信息"
