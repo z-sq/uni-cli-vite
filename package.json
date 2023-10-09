@@ -41,7 +41,8 @@
     "build:mp-xhs": "uni build -p mp-xhs",
     "build:quickapp-webview": "uni build -p quickapp-webview",
     "build:quickapp-webview-huawei": "uni build -p quickapp-webview-huawei",
-    "build:quickapp-webview-union": "uni build -p quickapp-webview-union"
+    "build:quickapp-webview-union": "uni build -p quickapp-webview-union",
+    "prepare": "husky install"
   },
   "dependencies": {
     "@dcloudio/uni-app": "3.0.0-3081220230817001",
@@ -73,6 +74,7 @@
     "@uni-helper/uni-app-types": "^0.5.11",
     "@uni-helper/uni-ui-types": "^0.5.11",
     "@vue/tsconfig": "^0.4.0",
+    "husky": "^8.0.0",
     "lint-staged": "^14.0.1",
     "mockjs": "^1.1.0",
     "prettier": "^3.0.3",
