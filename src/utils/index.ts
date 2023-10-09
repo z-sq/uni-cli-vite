@@ -13,4 +13,5 @@ export function toLoginPage(path: string, loginPath = "/pages/account/login") {
   } else {
     uni.navigateTo({ url });
   }
+  uni.showToast({ title: "请先登录", icon: "none" });
 }

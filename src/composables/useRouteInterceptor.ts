@@ -36,10 +36,6 @@ export function useRouteInterceptor() {
           // 未登录情况下，访问强制登录页面，重定向登陆页
           const { hasLogin } = useAccountStore();
           if (!hasLogin && checkNeedLoginURL(url)) {
-            uni.showToast({
-              title: "请先登录",
-              icon: "none",
-            });
             toLoginPage(url);
             return false;
           }
