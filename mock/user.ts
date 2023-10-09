@@ -24,7 +24,7 @@ export default [
     response: (req: { body: { username?: string; password?: string } }) => {
       const { username, password } = req.body;
       if (username && password) {
-        return resultSuccess();
+        return resultSuccess(Mockjs.Random.guid());
       } else {
         return resultError();
       }

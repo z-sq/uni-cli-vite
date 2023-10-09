@@ -32,7 +32,7 @@ export const useAccountStore = defineStore("account", () => {
   async function login(args: Record<string, any>) {
     await userServices.login(args).then((res) => {
       if (!res.success) return Promise.reject(res.errMsg);
-      token.value = args.username;
+      token.value = res.data;
     });
   }
 

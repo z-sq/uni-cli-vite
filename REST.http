@@ -1,0 +1,18 @@
+@baseUrl = {{$dotenv VITE_APP_API_URL}}/api
+
+### 登陆
+# @name login
+POST {{baseUrl}}/user/login
+Content-type: application/json
+
+{
+  "username": "admin",
+  "password": "888888"
+}
+
+### 个人信息
+@authToken = {{login.response.body.data}}
+# @name user
+GET {{baseUrl}}/user/currentUser
+Content-type: application/json
+Authorization: {{authToken}}
