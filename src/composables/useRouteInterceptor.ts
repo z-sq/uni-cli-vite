@@ -43,11 +43,7 @@ export function useRouteInterceptor() {
           // 防止页面栈重复
           if (["navigateTo", "redirectTo"].includes(item)) {
             /** 当前页面栈 */
-            const pages = getCurrentPages<{
-              $page: {
-                fullPath: string;
-              };
-            }>();
+            const pages = getCurrentPages<{ $page: { fullPath: string } }>();
 
             // 已存在页面，直接返回历史页面
             const index = pages.findLastIndex(({ $page }) => $page.fullPath == url);

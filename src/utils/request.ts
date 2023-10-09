@@ -30,11 +30,7 @@ HttpInstance.interceptors.response.use(
     const { statusCode } = response;
     switch (statusCode) {
       case 401:
-        const pages = getCurrentPages<{
-          $page: {
-            fullPath: string;
-          };
-        }>();
+        const pages = getCurrentPages<{ $page: { fullPath: string } }>();
         const { $page } = pages[pages.length - 1];
         // 跳转登陆页
         toLoginPage($page.fullPath);
