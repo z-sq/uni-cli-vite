@@ -34,7 +34,7 @@ const list = ref<any[]>([]);
 const loadStatus = ref<"more" | "loading" | "noMore">("more");
 /** 各状态文字说明 */
 const contentText = {
-  contentdown: "点击或上拉加载更多",
+  contentdown: "点击加载更多",
   contentrefresh: "正在加载",
   contentnomore: "没有更多数据了",
 };
