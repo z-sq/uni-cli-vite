@@ -5,13 +5,15 @@
       un-m="x-auto t-25 b-12.5"
       src="/static/logo.png"
     />
-    <view class="flex justify-center">
-      <text un-text="lg gray-500">{{ title }}</text>
+    <view class="flex justify-center items-center">
+      <view class="i-ph-translate"></view>
+      <view class="text-lg">{{ $t("app.locale") }}</view>
     </view>
+    <button @click="toggleLocale">切换语言</button>
   </view>
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue';
-const title = ref('Hello');
+import useToggleLocale from "@/composables/useToggleLocale";
+const { toggleLocale } = useToggleLocale();
 </script>
