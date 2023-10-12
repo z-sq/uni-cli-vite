@@ -36,7 +36,7 @@ HttpInstance.interceptors.response.use(
         toLoginPage($page.fullPath);
         break;
       default:
-        statusCode && uni.showToast({ title: `${statusCode}：请求错误`, icon: "none" });
+        statusCode && uni.showToast({ title: `${statusCode}：请求异常`, icon: "none" });
         break;
     }
     return Promise.reject(response);
