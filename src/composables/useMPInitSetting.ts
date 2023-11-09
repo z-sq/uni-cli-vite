@@ -3,7 +3,6 @@ import { useAccountStore } from "@/stores/account";
 
 /**
  * 小程序初始化设置
- * @returns
  */
 export function useMPInitSetting() {
   const accountStore = useAccountStore();
@@ -20,10 +19,8 @@ export function useMPInitSetting() {
         title: "更新提示",
         content: "新版本已就绪，是否立即使用？",
         success: ({ confirm }) => {
-          if (confirm) {
-            // 新的版本已经下载好，调用 applyUpdate 强制应用新版本并重启
-            updateManager.applyUpdate();
-          }
+          // 新的版本已经下载好，调用 applyUpdate 强制应用新版本并重启
+          confirm && updateManager.applyUpdate();
         },
       });
     });

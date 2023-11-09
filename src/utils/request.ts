@@ -5,7 +5,7 @@ import { toLoginPage } from "@/utils";
 // 全局配置修改 https://www.quanzhan.co/luch-request/guide/3.x/#全局配置修改setconfig
 const HttpInstance = new HttpRequest({
   /* #ifndef H5 */
-  baseURL: import.meta.env.VITE_APP_API_URL, // 请求的根域名
+  baseURL: import.meta.env.VITE_API_URL, // 请求的根域名
   /* #endif */
   enableHttp2: true, // 开启 http2
   enableQuic: true, // 开启 quic
@@ -28,19 +28,16 @@ HttpInstance.interceptors.response.use(
   (response) => {
     // 超出 2xx 范围的状态码都会触发该函数。
     const { statusCode } = response;
+    const pages = getCurrentPages<{ $page: { fullPath: string } }>();
+    const { $page } = pages[pages.length - 1];
+
     switch (statusCode) {
       case 401:
-        const pages = getCurrentPages<{
-          $page: {
-            fullPath: string;
-          };
-        }>();
-        const { $page } = pages[pages.length - 1];
         // 跳转登陆页
         toLoginPage($page.fullPath);
         break;
       default:
-        statusCode && uni.showToast({ title: `${statusCode}：请求错误`, icon: "none" });
+        statusCode && uni.showToast({ title: `${statusCode}：请求异常`, icon: "none" });
         break;
     }
     return Promise.reject(response);

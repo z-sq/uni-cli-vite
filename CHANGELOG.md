@@ -1,5 +1,17 @@
 # 更新历史
 
+### [0.2.1](https://github.com/z-sq/uni-cli-vite/compare/v0.2.0...v0.2.1) (2023-11-09)
+
+### 🐛 Bug Fixes | Bug 修复
+
+- 修复强制登陆提示在小程序展示时间太短问题 ([21d6b6a](https://github.com/z-sq/uni-cli-vite/commit/21d6b6a37a0e6a6fb2cd5c5e2663a199076a82a1))
+
+### ✨ Features | 新功能
+
+- @uni-helper/unocss-preset-uni替换unocss-applet ([0fd2cf8](https://github.com/z-sq/uni-cli-vite/commit/0fd2cf81404a4442b4869327d44daa2ab85a8cc2))
+- 列表加载示例 ([2d97e6e](https://github.com/z-sq/uni-cli-vite/commit/2d97e6e3639c83b00d595226454b2b68707383b8))
+- 增加接口请求示例文件 ([15eb46e](https://github.com/z-sq/uni-cli-vite/commit/15eb46e1486fe4f1793e78aabbf795c012412a06))
+
 ## [0.2.0](https://github.com/z-sq/uni-app-vite/compare/v0.1.3...v0.2.0) (2023-09-23)
 
 ### 🐛 Bug Fixes | Bug 修复

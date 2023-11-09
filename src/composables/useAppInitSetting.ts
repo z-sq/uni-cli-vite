@@ -3,7 +3,6 @@ import { useRouteInterceptor } from "@/composables/useRouteInterceptor";
 
 /**
  * 应用程序初始化设置
- * @returns
  */
 export default function useAppInitSetting() {
   // #ifdef MP

@@ -1,4 +1,4 @@
-import { request } from '@/utils/request';
+import { request } from "@/utils/request";
 
 /** MOCK数据 */
 type MockRandom = Record<string, any> & {
@@ -20,29 +20,29 @@ type MockRandom = Record<string, any> & {
 
 /** 获取规则列表 GET /api/rule */
 export async function getRule(params: API.PageParams) {
-  return request<API.PageList<MockRandom>>('/api/rule', {
-    method: 'GET',
-    params
+  return request<API.PageList<MockRandom>>(`/api/rule`, {
+    method: "GET",
+    params,
   });
 }
 
 /** 新建规则 POST /api/rule */
 export async function addRule() {
-  return request<MockRandom>('/api/rule', {
-    method: 'POST'
+  return request<MockRandom>(`/api/rule`, {
+    method: "POST",
   });
 }
 
 /** 更新规则 PUT /api/rule */
 export async function updateRule() {
-  return request<MockRandom>('/api/rule', {
-    method: 'PUT'
+  return request<MockRandom>(`/api/rule`, {
+    method: "PUT",
   });
 }
 
 /** 删除规则 DELETE /api/rule */
 export async function removeRule() {
-  return request('/api/rule', {
-    method: 'DELETE'
+  return request(`/api/rule`, {
+    method: "DELETE",
   });
 }

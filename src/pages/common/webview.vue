@@ -1,7 +1,3 @@
-<template>
-  <web-view :src="link" @message="handleMessage($event.detail.data)"></web-view>
-</template>
-
 <script setup lang="ts">
 import { ref } from "vue";
 import { onLoad, onShareAppMessage } from "@dcloudio/uni-app";
@@ -31,3 +27,7 @@ function handleMessage(data: any[]) {
   });
 }
 </script>
+
+<template>
+  <web-view :src="link" @message="handleMessage($event.detail.data)" />
+</template>

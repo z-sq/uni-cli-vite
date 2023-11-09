@@ -1,6 +1,6 @@
 import Mockjs from "mockjs";
 import type { MockMethod } from "vite-plugin-mock";
-import { resultSuccess, resultError } from "./_util";
+import { resultError, resultSuccess } from "./_util";
 
 export default [
   {
@@ -24,7 +24,7 @@ export default [
     response: (req: { body: { username?: string; password?: string } }) => {
       const { username, password } = req.body;
       if (username && password) {
-        return resultSuccess();
+        return resultSuccess(Mockjs.Random.guid());
       } else {
         return resultError();
       }
