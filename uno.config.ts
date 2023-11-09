@@ -2,12 +2,7 @@ import { defineConfig, presetIcons, transformerDirectives, transformerVariantGro
 import { presetUni } from "@uni-helper/unocss-preset-uni";
 
 export default defineConfig({
-  rules: [
-    [
-      /^intrinsic-h-(\d+)$/,
-      ([, d]) => ({ "content-visibility": "auto", "contain-intrinsic-height": `auto ${Number(d) / 4}rem` }),
-    ],
-  ],
+  rules: [[/^intrinsic-h-(\d+)$/, ([, d]) => ({ "content-visibility": "auto", "contain-intrinsic-height": `auto ${Number(d) / 4}rem` })]],
   presets: [presetUni(), presetIcons({ warn: true, cdn: "https://esm.sh/", unit: "rem" })],
   transformers: [transformerDirectives(), transformerVariantGroup()],
 });

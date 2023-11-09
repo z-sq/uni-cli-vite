@@ -1,4 +1,6 @@
-# UniApp + TS + Vite
+# Uni CLI + TS + Vite
+
+`Uni CLI`：面向非HBuilderX的用户（如习惯使用vscode/webstorm的开发者），提供创建项目、编译发行等能力；在App平台，仅支持生成离线打包的wgt资源包，不支持云端打包生成apk/ipa；若需云端打包，依然需要使用HBuilderX。
 
 ## 项目安装依赖
 
@@ -41,7 +43,7 @@ npm run build:%PLATFORM%
 ## 目录结构
 
 ```bash
-uni-app-vite
+uni-cli-vite
 ┣ uniCloud                  # 云空间目录，阿里云为uniCloud-aliyun,腾讯云为uniCloud-tcb
 ┣ dist                      # 非工程代码，存放运行或发行的编译结果
 ┣ mock                      # 本地模拟数据
@@ -75,4 +77,4 @@ uni-app-vite
 
 ## Customize configuration
 
-See [Configuration Reference](https://uniapp.dcloud.io/collocation/pages).
+See [Configuration Reference](https://uniapp.dcloud.net.cn/collocation/vite-config.html).

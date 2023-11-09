@@ -1,17 +1,3 @@
-<template>
-  <view class="p-5">
-    <uni-forms ref="formRef" label-align="right" :model="formData" :rules="formRules">
-      <uni-forms-item label="账号" name="username">
-        <uni-easyinput type="text" placeholder="请输入姓名" v-model="formData.username" />
-      </uni-forms-item>
-      <uni-forms-item label="密码" name="password">
-        <uni-easyinput type="password" placeholder="请输入密码" v-model="formData.password" />
-      </uni-forms-item>
-    </uni-forms>
-    <button type="primary" :loading="loading" @click="submitForm">登陆</button>
-  </view>
-</template>
-
 <script setup lang="ts">
 import { reactive, ref } from "vue";
 import { onLoad } from "@dcloudio/uni-app";
@@ -74,7 +60,7 @@ function submitForm() {
   formRef.value?.validate &&
     formRef.value.validate(async (err: any) => {
       // 如果校验成功 ，err 返回 null
-      if (!!err) return false;
+      if (err) return false;
 
       loading.value = true;
       // 调用登陆接口
@@ -97,3 +83,17 @@ function submitForm() {
     });
 }
 </script>
+
+<template>
+  <view class="p-5">
+    <uni-forms ref="formRef" label-align="right" :model="formData" :rules="formRules">
+      <uni-forms-item label="账号" name="username">
+        <uni-easyinput v-model="formData.username" type="text" placeholder="请输入姓名" />
+      </uni-forms-item>
+      <uni-forms-item label="密码" name="password">
+        <uni-easyinput v-model="formData.password" type="password" placeholder="请输入密码" />
+      </uni-forms-item>
+    </uni-forms>
+    <button type="primary" :loading="loading" @click="submitForm">登陆</button>
+  </view>
+</template>

@@ -1,4 +1,4 @@
-@baseUrl = {{$dotenv VITE_APP_API_URL}}/api
+@baseUrl = {{$dotenv VITE_API_URL}}/api
 
 ### 登陆
 # @name login

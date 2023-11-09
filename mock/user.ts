@@ -1,6 +1,6 @@
 import Mockjs from "mockjs";
 import type { MockMethod } from "vite-plugin-mock";
-import { resultSuccess, resultError } from "./_util";
+import { resultError, resultSuccess } from "./_util";
 
 export default [
   {

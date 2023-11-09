@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { onLaunch, onShow, onHide } from "@dcloudio/uni-app";
+import { onHide, onLaunch, onShow } from "@dcloudio/uni-app";
 import useAppInitSetting from "@/composables/useAppInitSetting";
 
 useAppInitSetting();
@@ -14,6 +14,7 @@ onHide(() => {
   console.log("App Hide");
 });
 </script>
+
 <style>
 /* 每个页面公共css */
 

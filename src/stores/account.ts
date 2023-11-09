@@ -1,5 +1,5 @@
 import { defineStore } from "pinia";
-import { ref, watchEffect, computed } from "vue";
+import { computed, ref, watchEffect } from "vue";
 import * as userServices from "@/services/user";
 
 export const useAccountStore = defineStore("account", () => {

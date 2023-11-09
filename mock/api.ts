@@ -1,11 +1,11 @@
 import Mockjs from "mockjs";
 import type { MockMethod } from "vite-plugin-mock";
-import { resultSuccess, resultPageSuccess, resultError } from "./_util";
+import { resultError, resultPageSuccess, resultSuccess } from "./_util";
 
 // 拓展mockjs
 Mockjs.Random.extend({
-  phone: function (): string {
-    var phonePrefixs = ["132", "135", "189"]; // 自己写前缀哈
+  phone(): string {
+    const phonePrefixs = ["132", "135", "189"]; // 自己写前缀哈
     return this.pick(phonePrefixs) + Mockjs.mock(/\d{8}/); // Number()
   },
 });
